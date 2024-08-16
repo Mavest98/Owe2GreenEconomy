@@ -1,0 +1,64 @@
+<div class="flex min-h-screen flex-col justify-center px-6 py-12 lg:px-8 bg-cover" style="background-image: url('/assets/IMG-20240729-WA0055.jpg'); background-size: cover; background-position: center; height: 100vh;">
+  <div class="sm:mx-auto sm:w-full sm:max-w-md bg-white bg-opacity-80 p-8 rounded-lg shadow-lg">
+    <h2 class="text-center text-3xl font-extrabold leading-9 tracking-tight text-gray-900">Create Your Account</h2>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="mt-8 space-y-6">
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+        <div class="mt-2">
+          <input id="name" formControlName="name" type="text" required class="block w-full rounded-md border-gray-300 py-2 px-3 shadow-sm placeholder:text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm sm:leading-5"
+            [ngClass]="{
+              'ring-gray-300 focus:ring-indigo-600': name?.valid && !name?.invalid,
+              'ring-red-500 focus:ring-red-500': name?.invalid && (name?.dirty || name?.touched)
+            }">
+          <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="text-red-500 text-sm mt-1">Name is required.</div>
+        </div>
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+        <div class="mt-2">
+          <input id="email" formControlName="email" type="email" required class="block w-full rounded-md border-gray-300 py-2 px-3 shadow-sm placeholder:text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm sm:leading-5"
+            [ngClass]="{
+              'ring-gray-300 focus:ring-indigo-600': email?.valid && !email?.invalid,
+              'ring-red-500 focus:ring-red-500': email?.invalid && (email?.dirty || email?.touched)
+            }">
+          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-red-500 text-sm mt-1">Valid email is required.</div>
+        </div>
+      </div>
+
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <div class="mt-2">
+          <input id="password" formControlName="password" type="password" required class="block w-full rounded-md border-gray-300 py-2 px-3 shadow-sm placeholder:text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm sm:leading-5"
+            [ngClass]="{
+              'ring-gray-300 focus:ring-indigo-600': password?.valid && !password?.invalid,
+              'ring-red-500 focus:ring-red-500': password?.invalid && (password?.dirty || password?.touched)
+            }">
+          <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="text-red-500 text-sm mt-1">Password must be at least 6 characters.</div>
+        </div>
+      </div>
+
+      <div>
+        <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+        <div class="mt-2">
+          <input id="confirm-password" formControlName="confirmPassword" type="password" required class="block w-full rounded-md border-gray-300 py-2 px-3 shadow-sm placeholder:text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm sm:leading-5"
+            [ngClass]="{
+              'ring-gray-300 focus:ring-indigo-600': confirmPassword?.valid && !confirmPassword?.invalid,
+              'ring-red-500 focus:ring-red-500': confirmPassword?.invalid && (confirmPassword?.dirty || confirmPassword?.touched)
+            }">
+          <div *ngIf="confirmPassword?.invalid && (confirmPassword?.dirty || confirmPassword?.touched)" class="text-red-500 text-sm mt-1">Confirmation password is required.</div>
+        </div>
+      </div>
+
+      <div>
+        <button type="submit" [disabled]="registerForm.invalid" class="flex w-full justify-center rounded-md bg-indigo-600 text-white py-2 px-4 text-sm font-semibold shadow-sm hover:bg-indigo-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:bg-gray-400 disabled:cursor-not-allowed">Register</button>
+      </div>
+    </form>
+
+    <p class="mt-6 text-center text-sm text-gray-600">
+      Already have an account?
+      <a routerLink="/login" class="font-semibold text-indigo-600 hover:text-indigo-500 transition duration-300 ease-in-out">Sign in</a>
+    </p>
+  </div>
+</div>
