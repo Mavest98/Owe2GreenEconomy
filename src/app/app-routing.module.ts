@@ -19,7 +19,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LandingComponent } from './components/landing/landing.component';
-
+import { ExecutivesComponent } from './executives/executives.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent },
@@ -29,7 +29,9 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'landing', component: LandingComponent }
+  { path: 'landing', component: LandingComponent },
+  { path: 'executives', component: ExecutivesComponent}
+
 
 ];
 

@@ -14,6 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ExecutivesComponent } from './executives/executives.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     NavbarComponent,
     FooterComponent,
-    LandingComponent
+    LandingComponent,
+    ExecutivesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+<!-- src/app/components/owe2-green-economy/owe2-green-economy.component.html -->
+<h2>Welcome To Owe2EnergyGreenEnvironment Executives </h2>
+<div class="executives-container">
+    <div class="executive-card" *ngFor="let executive of executives">
+      <img [src]="executive.profilePicture" alt="{{ executive.name }}" class="executive-photo" />
+      <h2>{{ executive.name }}</h2>
+      <h3>{{ executive.title }}</h3>
+      <p><strong>Email:</strong> <a href="mailto:{{ executive.email }}">{{ executive.email }}</a></p>
+      <p><strong>Phone:</strong> {{ executive.phone }}</p>
+      <p>{{ executive.bio }}</p>
+    </div>
+  </div>
+  
