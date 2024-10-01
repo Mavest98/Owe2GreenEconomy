@@ -2,83 +2,142 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        .background-image {
-            background-image: url('assets/DALL·E 2024-08-08 13.42.14 - A photo of a factory chimney emitting thick smoke into the sky, similar to the given image. The scene includes industrial structures and power lines. .webp');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .overlay {
-            background-color: rgba(0, 0, 0, 0.6);
-        }
-
-        .service-item {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 16px;
-            border-radius: 8px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .service-item:hover {
-            transform: scale(1.05);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-900 text-gray-100">
-    <div class="container mx-auto p-8 rounded-lg shadow-lg background-image">
-        <div class="overlay p-8 rounded-lg">
-            <h1 class="text-4xl font-bold text-center mb-8 text-white">Our Services</h1>
-            <ul class="space-y-6">
-                <li class="service-item">
-                    <strong class="text-green-400">Environmental Education:</strong>
-                    <p>We develop and implement educational programs, workshops, and awareness campaigns to raise awareness about environmental issues and promote sustainable living practices.</p>
-                </li>
-                <li class="service-item">
-                    <strong class="text-green-400">Awareness Campaigns:</strong>
-                    <p>We conduct awareness campaigns to educate the public about pressing environmental issues and promote action towards achieving the United Nations Sustainable Development Goals (SDGs).</p>
-                </li>
-                <li class="service-item">
-                    <strong class="text-green-400">Workshops and Educational Events:</strong>
-                    <p>We organize workshops, seminars, and educational events focused on environmental education, sustainable development, and conservation practices.</p>
-                </li>
-                <li class="service-item">
-                    <strong class="text-green-400">Tree Planting and Reforestation:</strong>
-                    <p>We actively participate in tree-planting initiatives and collaborate with local communities, schools, and government agencies to restore ecosystems, combat climate change, and promote biodiversity conservation.</p>
-                </li>
-                <li class="service-item">
-                    <strong class="text-green-400">Promotion of Environmental Courses:</strong>
-                    <p>We partner with organizations like WESSA and Common Earth to promote environmental courses that empower individuals with knowledge and skills to address environmental challenges.</p>
-                </li>
-                <li class="service-item">
-                    <strong class="text-green-400">Evaluation and Monitoring:</strong>
-                    <p>We continuously evaluate the impact of our initiatives, measure progress towards our goals, and ensure accountability to our donors and stakeholders.</p>
-                </li>
-                <li class="service-item">
-                    <strong class="text-green-400">Advocacy and Policy:</strong>
-                    <p>We advocate for policies and initiatives that address environmental challenges, promote renewable energy, and advance environmental justice.</p>
-                </li>
-                <li class="service-item">
-                    <strong class="text-green-400">Mining and Materials for Sustainable Development Transformation:</strong>
-                    <p>We actively engage in initiatives related to mining and materials for sustainable development transformation.</p>
-                </li>
-                <li class="service-item">
-                    <strong class="text-green-400">Environmental Justice:</strong>
-                    <p>We work to promote environmental justice by advocating for equitable access to clean air, water, and natural resources, and addressing systemic inequalities that perpetuate environmental harm.</p>
-                </li>
-            </ul>
-            <h2 class="text-3xl font-semibold text-center mt-12 mb-6 text-blue-400">Climate Guide</h2>
-            <p class="text-justify text-gray-200 leading-relaxed">
-                Knowing more about the big issues facing the Climate, Nature, Food, and Fashion gives you more power to make the right decisions for you and the future of our generation and the planet. Humanity, animals, plants, and other living beings need a specific climate in order to live. Since the Industrial Revolution, our planet has been heating up at a much quicker rate than ever before—with damaging consequences. We have been burning fossil fuels such as coal and gas to provide electricity, heating, and transportation, but this releases carbon dioxide, methane, and other gases into the atmosphere. They hang in the air like an invisible blanket, trapping the heat from the Sun and stopping it from returning to space, warming up the Earth’s surface temperature. As a result, we are seeing extreme weather patterns, from floods to droughts across the globe. It is also causing glaciers and ice caps to melt, causing sea levels to rise. While we cannot reverse the damage, we can make changes to slow things down, reduce our impact here on Earth, and create a more sustainable future.
-            </p>
-        </div>
+<body class="bg-gray-100 text-gray-100 background-image">
+
+   <!-- Navbar Start -->
+   <nav class="bg-green-700 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-white font-bold text-xl">Owe2 Green Economy</div>
+
+      <div class="hidden md:flex space-x-6">
+        <a routerLink="/home"
+        class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+        <i class="fas fa-home"></i> Home
+      </a>
+      <a routerLink="/services"
+      class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+      <i class="fas fa-tools"></i> Services </a>
+        <a routerLink="/contact"
+        class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+        <i class="fas fa-envelope"></i> Contact
+      </a>
+      <a routerLink="/gallery"
+      class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+      <i class="fas fa-images"></i>Gallery</a>
+
+      <a routerLink="/executives"
+      class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+      <i class="fas fa-user-tie"></i> Executives
+    </a>
+
+      </div>
+ <!-- Mobile Menu Button -->
+ <div class="md:hidden flex items-center">
+  <button (click)="toggleMenu()" class="mobile-menu-button text-white focus:outline-none">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+</div>
     </div>
+ <!-- Mobile Menu -->
+  <!-- Mobile Menu -->
+  <div [ngClass]="{'hidden': !isMenuOpen}" class="mobile-menu md:hidden mt-4">
+    <ul class="flex flex-col space-y-2">
+      <li>
+        <a routerLink="/home" class="block text-white hover:text-gray-200 p-2">
+          <i class="fas fa-home"></i> Home
+        </a>
+      </li>
+      <li>
+        <a routerLink="/services" class="block text-white hover:text-gray-200 p-2">
+          <i class="fas fa-tools"></i> Services
+        </a>
+      </li>
+      <li>
+        <a routerLink="/about" class="block text-white hover:text-gray-200 p-2">
+          <i class="fas fa-info-circle"></i> About Us
+        </a>
+      </li>
+      <li>
+        <a routerLink="/gallery" class="block text-white hover:text-gray-200 p-2">
+          <i class="fas fa-images"></i> Gallery
+        </a>
+      </li>
+      <li>
+        <a routerLink="/executives" class="block text-white hover:text-gray-200 p-2">
+          <i class="fas fa-user-tie"></i> Executives
+        </a>
+      </li>
+      <li>
+        <a routerLink="/contact" class="block text-white hover:text-gray-200 p-2">
+          <i class="fas fa-envelope"></i> Contact
+        </a>
+      </li>
+    </ul>
+  </div>
+  </nav>
+  <!-- Navbar End -->
+
+  <div id="services" class="container mx-auto p-8 rounded-lg shadow-lg mt-10">
+    <div class="overlay">
+      <h1 class="text-5xl font-extrabold text-center mb-10 text-white">Our Services</h1>
+      <ul class="space-y-8">
+        <li class="service-item">
+          <strong class="text-green-300 text-xl">1. Environmental Education & Awareness</strong>
+          <p class="mt-2 text-muted">● Conducting workshops and training on climate change, recycling, and sustainability.<br />
+            ● Partnering with local schools to integrate environmental education into their curriculum.</p>
+        </li>
+        <li class="service-item">
+          <strong class="text-green-300 text-xl">2. Community Projects</strong>
+          <p class="mt-2 text-muted">● Tree planting, vegetable gardens, and water quality testing.<br />
+            ● Engaging communities in sustainable practices and providing environmental risk assessments.<br />
+            ● Recycling Workshops</p>
+        </li>
+        <li class="service-item">
+          <strong class="text-green-300 text-xl">3. Youth Development Programmes</strong>
+          <p class="mt-2 text-muted">● Training youth in upcycling, recycling, and green job opportunities.<br />
+            ● Promoting sustainable fashion through textile recycling and creating new products from old clothes.</p>
+        </li>
+        <li class="service-item">
+          <strong class="text-green-300 text-xl">4. Enterprise Development and Green Jobs</strong>
+          <p class="mt-2 text-muted">● Supporting entrepreneurship in green industries such as recycling, waste management, and green industrial manufacturing.<br />
+            ● Offering mentorship and business development support for local entrepreneurs.</p>
+        </li>
+        <li class="service-item">
+          <strong class="text-green-300 text-xl">5. Sports, Arts, Culture, & Recreation</strong>
+          <p class="mt-2 text-muted">● Integrating environmental initiatives with community-based arts, culture, and sports activities.<br />
+            ● Hosting environmental expos and promoting awareness through creative engagement.</p>
+        </li>
+        <li class="service-item">
+          <strong class="text-green-300 text-xl">6. Consulting & Partnerships</strong>
+          <p class="mt-2 text-muted">● Offering consultancy services on sustainability practices and environmental management systems.<br />
+            ● Collaborating with government bodies, businesses, and NGOs to achieve shared environmental goals.</p>
+        </li>
+      </ul>
+      <h2 class="text-4xl font-semibold text-center mt-12 mb-6 text-blue-300">Climate Guide</h2>
+      <p class="text-justify text-gray-300 leading-relaxed">
+        Knowing more about the big issues facing the Climate, Nature, Food, and Fashion gives you more power to make the right decisions for you and the future of our generation and the planet. Humanity, animals, plants, and other living beings need a specific climate in order to live. Since the Industrial Revolution, our planet has been heating up at a much quicker rate than ever before—with damaging consequences. We have been burning fossil fuels such as coal and gas to provide electricity, heating, and transportation, but this releases carbon dioxide, methane, and other gases into the atmosphere. They hang in the air like an invisible blanket, trapping the heat from the Sun and stopping it from returning to space, warming up the Earth’s surface temperature. As a result, we are seeing extreme weather patterns, from floods to droughts across the globe. It is also causing glaciers and ice caps to melt, causing sea levels to rise. While we cannot reverse the damage, we can make changes to slow things down, reduce our impact here on Earth, and create a more sustainable future.
+      </p>
+    </div>
+  </div>
+
+  <div id="about-us" class="container mx-auto p-8 rounded-lg shadow-lg mt-10">
+    <!-- Your about section content goes here -->
+  </div>
+
+  <div id="contact" class="container mx-auto p-8 rounded-lg shadow-lg mt-10">
+    <!-- Your contact section content goes here -->
+  </div>
+
+
+
 </body>
 
 </html>

@@ -1,85 +1,203 @@
-<app-navbar></app-navbar>
-<header class="bg-green-600 text-white">
-  <div class="container mx-auto py-4 flex justify-between items-center">
-    <div class="flex items-center space-x-4">
-      <img src="/assets/Owe2-logo-02.png" alt="Owe2 Green Economy Logo" class="h-12 w-12 object-contain">
-      <div class="text-lg font-extrabold">OWE2 GREEN ECONOMY</div>
-    </div>
-    <nav class="space-x-4">
-      <a routerLink="/" class="hover:underline text-white font-semibold">Home</a>
-      <a routerLink="/about" class="hover:underline text-white font-semibold">About Us</a>
-      <a routerLink="/services" class="hover:underline text-white font-semibold">Our Services</a>
-      <a routerLink="/gallery" class="hover:underline text-white font-semibold">Gallery</a>
-      <a routerLink="/contact" class="hover:underline text-white font-semibold">Contact Us</a>
-      <a routerLink="/executives" class="hover:underline text-white font-semibold">Executive</a>
+<!DOCTYPE html>
+<html lang="en">
 
-    </nav>
-    <div class="space-x-4 text-xl">
-      <i class="fab fa-facebook-f hover:text-gray-300 transition duration-300"></i>
-      <i class="fab fa-twitter hover:text-gray-300 transition duration-300"></i>
-      <i class="fab fa-instagram hover:text-gray-300 transition duration-300"></i>
-      <i class="fab fa-linkedin-in hover:text-gray-300 transition duration-300"></i>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OWE2 Green Economy</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Header Section -->
+  <header class="bg-green-600 text-white">
+    <div class="container mx-auto py-4 flex flex-wrap justify-between items-center">
+
+      <!-- Logo resized for mobile -->
+      <div class="flex items-center space-x-4">
+        <img src="/assets/WhatsApp Image 2024-09-13 at 05.22.40_f3cbbf85.jpg" alt="Owe2 Green Economy Logo" class="h-10 w-10 sm:h-12 sm:w-12 object-contain logo">
+        <div class="text-lg sm:text-xl font-extrabold">OWE2 GREEN ECONOMY</div>
+      </div>
+
+      <!-- Hamburger Button for Mobile -->
+      <div class="md:hidden">
+        <button (click)="toggleSidebar()" class="focus:outline-none">
+          <i class="fas fa-bars text-white text-3xl"></i>
+        </button>
+      </div>
+
+      <!-- Desktop Navbar -->
+      <nav class="hidden md:flex space-x-4 sm:space-x-6 mt-4 sm:mt-0 text-center sm:text-left">
+        <a routerLink="/home" class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+          <i class="fas fa-home"></i> Home
+        </a>
+        <a routerLink="/services" class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+          <i class="fas fa-tools"></i> Services
+        </a>
+        <a routerLink="/about" class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+          <i class="fas fa-info-circle"></i> About Us
+        </a>
+        <a routerLink="/gallery" class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+          <i class="fas fa-images"></i> Gallery
+        </a>
+        <a routerLink="/executives" class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+          <i class="fas fa-user-tie"></i> Executives
+        </a>
+        <a routerLink="/contact" class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+          <i class="fas fa-envelope"></i> Contact
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Sidebar Menu -->
+  <div [ngClass]="{'-translate-x-full': !isSidebarOpen, 'translate-x-0': isSidebarOpen}" class="sidebar transform -translate-x-full fixed left-0 top-0 bg-green-600 w-64 h-full z-50 transition-transform duration-500 ease-in-out">
+    <div class="p-6">
+      <button (click)="toggleSidebar()" class="text-white text-2xl mb-6">
+        <i class="fas fa-times"></i> Close
+      </button>
+      <nav class="space-y-4">
+        <a routerLink="/home" class="block text-white hover:text-gray-300 font-semibold"><i class="fas fa-home"></i> Home</a>
+        <a routerLink="/services" class="block text-white hover:text-gray-300 font-semibold"><i class="fas fa-tools"></i> Services</a>
+        <a routerLink="/about" class="block text-white hover:text-gray-300 font-semibold"><i class="fas fa-info-circle"></i> About Us</a>
+        <a routerLink="/gallery" class="block text-white hover:text-gray-300 font-semibold"><i class="fas fa-images"></i> Gallery</a>
+        <a routerLink="/executives" class="block text-white hover:text-gray-300 font-semibold"><i class="fas fa-user-tie"></i> Executives</a>
+        <a routerLink="/contact" class="block text-white hover:text-gray-300 font-semibold"><i class="fas fa-envelope"></i> Contact</a>
+      </nav>
     </div>
   </div>
 
+  <!-- Overlay for Sidebar -->
+  <div (click)="toggleSidebar()" *ngIf="isSidebarOpen" class="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
+
+  <!-- Donate Button and Social Media Links for Mobile -->
+  <div class="flex flex-col md:hidden items-center space-y-4 text-xl mt-4 sm:mt-0">
+    <a href="https://www.paypal.com/donate?hosted_button_id=YOUR_PAYPAL_BUTTON_ID" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-110">
+      <i class="fas fa-donate"></i> Donate
+    </a>
+    <div class="flex space-x-4 justify-center">
+      <a href="#" class="hover:text-gray-300 transition duration-300 hover:animate-bounce">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="hover:text-gray-300 transition duration-300 hover:animate-bounce">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" class="hover:text-gray-300 transition duration-300 hover:animate-bounce">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" class="hover:text-gray-300 transition duration-300 hover:animate-bounce">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
   <div class="relative">
-    <img src="/assets/3.jpg" class="w-full h-96 object-cover opacity-80" alt="Nature Background">
-    <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black bg-opacity-50">
-      <h1 class="text-5xl font-extrabold mb-4 animate__animated animate__fadeInDown">Welcome to OWE2 GREEN ECONOMY</h1>
-      <p class="text-lg mb-6 animate__animated animate__fadeInUp">Promoting Sustainable Development and Environmental Awareness</p>
-      <a routerLink="/about" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out animate__animated animate__zoomIn">Learn More</a>
+    <img src="/assets/3.jpg" class="w-full h-64 sm:h-80 md:h-96 object-cover opacity-80 animate__animated animate__fadeIn" alt="Nature Background" loading="lazy">
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black bg-opacity-50 px-4 animate__animated animate__fadeIn animate__delay-1s">
+      <h1 class="text-xl sm:text-2xl md:text-4xl font-semibold mb-4 animate__animated animate__fadeInDown">Welcome to OWE2 GREEN ECONOMY</h1>
+      <p class="text-sm sm:text-lg md:text-xl mb-6 animate__animated animate__fadeInDown bg-white text-black p-2 sm:p-4 rounded-lg shadow-lg">
+        Promoting Sustainable Development and Environmental Awareness
+      </p>
+      <a routerLink="/about" class="bg-green-700 hover:bg-green-900 text-white font-bold py-1 sm:py-2 px-4 sm:px-6 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-110 animate__animated animate__zoomIn animate__delay-2s">
+        Learn More
+      </a>
+      <h1 class="text-lg sm:text-2xl font-semibold mt-4 animate__animated animate__bounceIn">Do not be left behind!!!</h1>
+      <h1 class="text-md sm:text-xl italic animate__animated animate__lightSpeedInLeft">"Otla e nyanya e matha"</h1>
     </div>
   </div>
 
-  <section class="bg-gray-100 py-12">
-    <!-- <div class="container mx-auto text-center">
-      <h2 class="text-4xl font-bold text-green-700 mb-6">About Us</h2>
-      <p class="text-lg text-gray-700 leading-relaxed">
-        OWE2 GREEN ECONOMY is a Social Environmental Organisation that facilitates and promotes cross-disciplinary exploration of the root causes of and solutions to the climate crisis. We have a deep-seated commitment to empowering local communities and promoting sustainable development.
+  <!-- Core Importance Section -->
+  <section class="bg-gray-100 py-8 md:py-12">
+    <div class="container mx-auto text-center px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-green-700 mb-6 animate__animated animate__fadeInUp">Our Core
+        Importance</h2>
+      <p class="text-lg text-gray-700 font-semibold leading-relaxed max-w-4xl mx-auto">
+        Owe2 Green Economy is a forward-thinking environmental organisation dedicated to empowering local communities,
+        conserving the environment, and promoting sustainability. Founded in January 2022, the organisation is committed to
+        addressing Climate Change through a holistic and systemic approach that integrates education, green job creation, and
+        environmental conservation.
       </p>
-    </div> -->
-  </section>
-
-  <section class="bg-white py-12">
-    <div class="container mx-auto text-center">
-      <h2 class="text-4xl font-bold text-green-700 mb-6">Our Core Importance</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <ul class="list-disc list-inside text-left text-lg text-gray-800 leading-relaxed">
-          <li>Conservation (Water and Energy)</li>
-          <li>Pollution</li>
-          <li>Recycling</li>
-          <li>Agriculture and Food security</li>
-          <li>Resource and Environmental Protection</li>
-          <li>Environmental Technology and Innovation</li>
-          <li>Community Upliftment and Job Creation</li>
-        </ul>
-        <p class="text-lg text-gray-700 leading-relaxed">
-          We focus on sectors of the economy with rapid growth potential, especially with regard to employment and exports. Driven by an ethos and imperatives of transformation, modernization, and re-industrialization, we aim to include the social protection of vulnerable groups in society through the promotion of access to economic opportunities.
-        </p>
-      </div>
     </div>
   </section>
 
-  <section class="bg-gray-100 py-12">
-    <div class="container mx-auto text-center">
-      <h2 class="text-4xl font-bold text-green-700 mb-6">Our Initiatives</h2>
+  <!-- Initiatives Section -->
+  <section class="bg-white py-8 md:py-12">
+    <div class="container mx-auto text-center px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-green-700 mb-6 animate__animated animate__fadeInUp">Our Initiatives</h2>
       <div class="flex justify-center">
-        <iframe class="w-full md:w-3/4 h-64 rounded-lg shadow-lg" frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Owe2 Green Economy| Tree Planting Workshop 2023" src="https://www.youtube.com/embed/IxeroZlnU4Q?controls=1&amp;rel=0&amp;playsinline=0&amp;modestbranding=0&amp;autoplay=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fowe2greeneconomy.co.za&amp;widgetid=1"></iframe>
+        <iframe class="w-full md:w-3/4 h-48 sm:h-64 md:h-80 rounded-lg shadow-lg animate__animated animate__zoomIn"
+          frameborder="0" allowfullscreen title="Owe2 Green Economy | Tree Planting Workshop 2023"
+          src="https://www.youtube.com/embed/IxeroZlnU4Q?controls=1&rel=0&playsinline=0&modestbranding=0&autoplay=0&enablejsapi=1" loading="lazy"></iframe>
       </div>
     </div>
   </section>
 
-  <section class="bg-white py-12">
-    <div class="container mx-auto text-center">
-      <h2 class="text-4xl font-bold text-green-700 mb-6">Get Involved</h2>
-      <p class="text-lg text-gray-700 mb-6 leading-relaxed">Join us in making a positive impact on the environment.</p>
-      <a routerLink="/contact" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out">Contact Us</a>
+  <!-- Services Section -->
+  <section class="bg-white py-8 md:py-12">
+    <div class="container mx-auto text-center px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-green-700 mb-6">Services and Programmes</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+        <p class="text-lg text-gray-700 font-semibold leading-relaxed">
+          We offer a wide range of services and programmes to support sustainable development, including educational
+          workshops, community engagement projects, youth training, and enterprise support in green industries.
+        </p>
+        <ul class="list-disc list-inside text-left text-lg font-semibold text-gray-800 leading-relaxed space-y-4">
+          <li class="hover-scale p-4 transition-transform">Environmental Education & Awareness</li>
+          <li class="hover-scale p-4 transition-transform">Community Projects</li>
+          <li class="hover-scale p-4 transition-transform">Youth Development Programmes</li>
+          <li class="hover-scale p-4 transition-transform">Enterprise Development and Green Jobs</li>
+          <li class="hover-scale p-4 transition-transform">Sports, Arts, Culture, & Recreation</li>
+          <li class="hover-scale p-4 transition-transform">Consulting & Partnerships</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <footer class="bg-green-700 text-white py-4">
-    <div class="container mx-auto text-center">
-      &copy; 2024 OWE2 GREEN ECONOMY. All rights reserved.
+  <!-- Business Model & Key Partnerships -->
+  <section class="bg-gray-100 py-8 md:py-12">
+    <div class="container mx-auto text-center px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-green-700 mb-6 animate__animated animate__fadeInUp">Business Model &
+        Key Partnerships</h2>
+      <p class="text-lg text-gray-700 font-semibold leading-relaxed max-w-4xl mx-auto">
+        Owe2 Green Economy operates on a circular economy model, where resources and profits are reinvested into the
+        organization to sustain impact. We partner with government agencies, educational institutions, NGOs, and businesses
+        to broaden our reach and share resources.
+      </p>
+    </div>
+  </section>
+
+  <!-- Get Involved Section -->
+  <section class="bg-gray-100 py-8 md:py-12">
+    <div class="container mx-auto text-center px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-green-700 mb-6">Get Involved</h2>
+      <p class="text-lg text-gray-700 font-semibold mb-6 leading-relaxed">Join us in making a positive impact on the
+        environment.</p>
+      <a routerLink="/contact"
+        class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-110 hover:shadow-xl">Contact
+        Us</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-700 text-white py-6 animate__animated animate__fadeInUp">
+    <div class="container mx-auto text-center space-y-4">
+      <p>&copy; 2024 OWE2 GREEN ECONOMY. All rights reserved.</p>
+      <div class="flex justify-center space-x-6 text-xl">
+        <a href="#" class="hover:text-gray-300 transform hover:scale-110 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-gray-300 transform hover:scale-110 transition duration-300"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-gray-300 transform hover:scale-110 transition duration-300"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-gray-300 transform hover:scale-110 transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+      </div>
     </div>
   </footer>
-</header>
+
+</body>
+
+</html>

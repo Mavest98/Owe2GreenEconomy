@@ -1,62 +1,168 @@
-<div class="container mx-auto p-8 bg-white shadow-lg rounded-lg">
-  <h1 class="text-5xl font-extrabold text-green-700 mb-6 text-center">About Us</h1>
-  <p class="text-lg text-gray-700 leading-relaxed mb-8">
-    Welcome to Owe2 Green Economy, where our mission is to inspire environmental stewardship, promote sustainability, and advocate for environmental justice. As a leading environmental organization, we are dedicated to fostering a deeper understanding of environmental issues, empowering individuals and communities to take action, and advocating for policies that protect our planet and promote social equity.
-  </p>
-  
-  <div class="bg-gray-100 p-6 rounded-lg mb-8">
-    <h2 class="text-3xl font-semibold text-blue-600 mb-4">Our Mission</h2>
-    <p class="text-lg text-gray-700 leading-relaxed">
-      At Owe2 Green Economy, our mission is to advance environmental education, conservation, and sustainable development practices aligned with the United Nations Sustainable Development Goals (SDGs). We strive to promote environmental protection, justice, and equity while fostering a culture of respect for nature and all living beings.
-    </p>
-  </div>
-  
-  <div class="bg-gray-100 p-6 rounded-lg mb-8">
-    <h2 class="text-3xl font-semibold text-blue-600 mb-4">What We Do</h2>
-    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-      Environmental Education: We develop and implement educational programs, workshops, and awareness campaigns to raise awareness about environmental issues and promote sustainable living practices. Through partnerships with schools, universities, and community organizations, we empower individuals of all ages to become environmental stewards and changemakers.
-    </p>
-    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-      Awareness Campaigns: We conduct awareness campaigns to educate the public about pressing environmental issues and promote action towards achieving the United Nations Sustainable Development Goals (SDGs). Through engaging content and outreach efforts, we aim to raise awareness and inspire individuals to take meaningful steps towards sustainability.
-    </p>
-    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-      Workshops and Educational Events: We organize workshops, seminars, and educational events focused on environmental education, sustainable development, and conservation practices. Our interactive and informative sessions cover a wide range of topics, including SDGs, inner development goals, tree planting, and environmental courses offered by partner organizations like Wildlife Environmental Society of South Africa (WESSA) and Common Earth Academy.
-    </p>
-    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-      Tree Planting and Reforestation: We actively participate in tree-planting initiatives and collaborate with local communities, schools, and government agencies to restore ecosystems, combat climate change, and promote biodiversity conservation. Through tree planting, we aim to mitigate the effects of deforestation and contribute to a greener and healthier environment.
-    </p>
-    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-      Promotion of Environmental Courses: We partner with organizations like WESSA and Common Earth to promote environmental courses that empower individuals with knowledge and skills to address environmental challenges. By offering scholarships and organizing outreach efforts, we strive to make environmental education accessible to all and inspire lifelong learning and environmental stewardship.
-    </p>
-    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-      Evaluation and Monitoring: We continuously evaluate the impact of our initiatives, measure progress towards our goals, and ensure accountability to our donors and stakeholders. Through rigorous evaluation and monitoring, we strive to improve our effectiveness and maximize our positive impact on the environment and communities we serve.
-    </p>
-    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-      Advocacy and Policy: We advocate for policies and initiatives that address environmental challenges, promote renewable energy, and advance environmental justice. By engaging with policymakers, community leaders, and grassroots organizations, we work to influence decision-making processes and drive positive change at local, national, and global levels.
-    </p>
-    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-      Mining and Materials for Sustainable Development Transformation: As part of our commitment to sustainability, we actively engage in initiatives related to mining and materials for sustainable development transformation. This includes promoting responsible mining practices, advocating for the use of recycled and sustainable materials, and supporting initiatives that minimize the environmental impact of resource extraction and production processes.
-    </p>
-    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-      Environmental Justice: We recognize that environmental issues disproportionately affect marginalized communities and vulnerable populations. Therefore, we work to promote environmental justice by advocating for equitable access to clean air, water, and natural resources, and addressing systemic inequalities that perpetuate environmental harm.
-    </p>
-  </div>
-  
-  <div class="bg-gray-100 p-6 rounded-lg mb-8">
-    <h2 class="text-3xl font-semibold text-blue-600 mb-4">Our Impact</h2>
-    <p class="text-lg text-gray-700 leading-relaxed">
-      Over the years, Owe2 Green Economy has made significant strides in promoting environmental awareness, conservation, and sustainability. Through our educational programs, advocacy efforts, and community engagement initiatives, we have empowered thousands of individuals to become environmental leaders and advocates for change. Together, we are making a positive impact on our planet and creating a brighter future for generations to come.
-    </p>
-  </div>
 
-  <div class="bg-gray-100 p-6 rounded-lg">
-    <h2 class="text-3xl font-semibold text-blue-600 mb-4">Get Involved</h2>
-    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-      Join us in our mission to protect the environment, promote sustainability, and advocate for environmental justice. Whether you’re interested in volunteering, attending one of our events, or making a donation, there are many ways to get involved and make a difference. Together, we can create a more sustainable and equitable world for all.
-    </p>
-  </div>
 
-  <div class="text-center mt-8">
-    <a routerLink="/contact" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out">Get in Touch</a>
-  </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Navbar Start -->
+  <nav class="bg-green-700 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-white font-bold text-xl">Owe2 Green Economy</div>
+
+      <div class="hidden md:flex space-x-6">
+        <a routerLink="/home"
+        class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+        <i class="fas fa-home"></i> Home
+      </a>
+      <a routerLink="/services"
+      class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+      <i class="fas fa-tools"></i> Services </a>
+        <a routerLink="/contact"
+        class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+        <i class="fas fa-envelope"></i> Contact
+      </a>
+      <a routerLink="/gallery"
+      class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+      <i class="fas fa-images"></i>Gallery</a>
+
+      <a routerLink="/executives"
+      class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+      <i class="fas fa-user-tie"></i> Executives
+    </a>
+
+      </div>
+ <!-- Mobile Menu Button -->
+ <div class="md:hidden flex items-center">
+  <button (click)="toggleMenu()" class="mobile-menu-button text-white focus:outline-none">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
 </div>
+    </div>
+ <!-- Mobile Menu -->
+  <!-- Mobile Menu -->
+  <div [ngClass]="{'hidden': !isMenuOpen}" class="mobile-menu md:hidden mt-4">
+    <ul class="flex flex-col space-y-2">
+      <li>
+        <a routerLink="/home" class="block text-white hover:text-gray-200 p-2">
+          <i class="fas fa-home"></i> Home
+        </a>
+      </li>
+      <li>
+        <a routerLink="/services" class="block text-white hover:text-gray-200 p-2">
+          <i class="fas fa-tools"></i> Services
+        </a>
+      </li>
+      <li>
+        <a routerLink="/about" class="block text-white hover:text-gray-200 p-2">
+          <i class="fas fa-info-circle"></i> About Us
+        </a>
+      </li>
+      <li>
+        <a routerLink="/gallery" class="block text-white hover:text-gray-200 p-2">
+          <i class="fas fa-images"></i> Gallery
+        </a>
+      </li>
+      <li>
+        <a routerLink="/executives" class="block text-white hover:text-gray-200 p-2">
+          <i class="fas fa-user-tie"></i> Executives
+        </a>
+      </li>
+      <li>
+        <a routerLink="/contact" class="block text-white hover:text-gray-200 p-2">
+          <i class="fas fa-envelope"></i> Contact
+        </a>
+      </li>
+    </ul>
+  </div>
+  </nav>
+  <!-- Navbar End -->
+
+  <div class="container mx-auto p-8 bg-white shadow-lg rounded-lg fade-in">
+    <h1 id="about" class="text-5xl font-extrabold text-green-700 mb-8 text-center animate__animated animate__fadeInDown">About Us</h1>
+    <p class="text-lg text-gray-700 leading-relaxed mb-10 text-center animate__animated animate__fadeInUp">
+      Welcome to Owe2 Green Economy, where our mission is to inspire environmental stewardship, promote sustainability, and advocate for environmental justice. We are dedicated to fostering a deeper understanding of environmental issues and empowering communities to take action.
+    </p>
+
+    <div id="vision" class="bg-gray-50 p-8 rounded-lg mb-8 shadow-sm hover-grow">
+      <h2 class="text-3xl font-semibold text-green-700 mb-6 zoom-in-heading">Our Vision</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        To create a Green Carbon Caring Society where vulnerable communities are equipped with the knowledge and tools to address the climate crisis, leading the way to a sustainable future for all.
+      </p>
+    </div>
+
+    <div id="mission" class="bg-gray-50 p-8 rounded-lg mb-8 shadow-sm hover-grow">
+      <h2 class="text-3xl font-semibold text-green-700 mb-6 zoom-in-heading">Our Mission</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Our mission is to combat climate change by connecting, equipping, and amplifying the voices of communities most affected by environmental issues. We focus on creating sustainable opportunities in green jobs, promoting renewable energy, and fostering food security in township areas.
+      </p>
+    </div>
+
+    <div class="bg-gray-50 p-8 rounded-lg mb-8 shadow-sm hover-grow">
+      <h2 class="text-3xl font-semibold text-green-700 mb-6 zoom-in-heading">Core Values & Principles</h2>
+      <ul class="list-disc list-inside text-lg text-gray-700 leading-relaxed space-y-4">
+        <li><strong>Financial Sustainability:</strong> Ensuring self-sufficiency by reinvesting profits to maximize social and environmental impact.</li>
+        <li><strong>Community Empowerment:</strong> Providing access to economic opportunities and strengthening the productive capacity of vulnerable communities.</li>
+        <li><strong>Sustainable Practices:</strong> Fostering environmental stewardship through practical projects and educational initiatives.</li>
+        <li><strong>Inclusivity & Diversity:</strong> Promoting gender equality, youth empowerment, and the inclusion of people with disabilities.</li>
+        <li><strong>Circular Economy:</strong> Building sustainable economic models where resources are reused and recycled.</li>
+      </ul>
+    </div>
+
+    <div class="bg-gray-50 p-8 rounded-lg mb-8 shadow-sm hover-grow">
+      <h2 class="text-3xl font-semibold text-green-700 mb-6 zoom-in-heading">Business Model</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Owe2 Green Economy operates as a circular economy, where resources and profits are reinvested to ensure continuous impact. The organisation generates revenue through grants, donations, fundraising events, consultancy services, and green enterprise activities.
+      </p>
+    </div>
+
+    <div class="bg-gray-50 p-8 rounded-lg mb-8 shadow-sm hover-grow">
+      <h2 class="text-3xl font-semibold text-green-700 mb-6 zoom-in-heading">Key Partnerships</h2>
+      <ul class="list-disc list-inside text-lg text-gray-700 leading-relaxed space-y-4">
+        <li><strong>Government Agencies:</strong> Collaboration for regulatory support and funding.</li>
+        <li><strong>Educational Institutions:</strong> Partnering with schools to incorporate environmental education into their programs.</li>
+        <li><strong>NGOs & Civil Organizations:</strong> Joint initiatives to broaden impact and share resources.</li>
+        <li><strong>Businesses:</strong> Corporate partnerships for sponsorships and collaboration on sustainability initiatives.</li>
+      </ul>
+    </div>
+
+    <div class="bg-gray-50 p-8 rounded-lg mb-8 shadow-sm hover-grow">
+      <h2 class="text-3xl font-semibold text-green-700 mb-6 zoom-in-heading">Pillars and Sectors</h2>
+      <ul class="list-disc list-inside text-lg text-gray-700 leading-relaxed space-y-4">
+        <li><strong>Environmental Conservation:</strong> Reforestation, sustainable water management, biodiversity protection, and pollution control.</li>
+        <li><strong>Social Empowerment:</strong> Community education, youth and women empowerment, and health and well-being.</li>
+        <li><strong>Economic Sustainability:</strong> Green jobs, sustainable agriculture, circular economy practices, and renewable energy.</li>
+      </ul>
+    </div>
+
+    <div class="bg-gray-50 p-8 rounded-lg mb-8 shadow-sm hover-grow">
+      <h2 class="text-3xl font-semibold text-green-700 mb-6 zoom-in-heading">Compliance and Standards</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Owe2 Green Economy adheres to both South African and Global standards, including the United Nations Sustainable Development Goals (SDGs), ISO 14001:2015, and the National Development Plan (NDP). The organization also aligns with the African Union’s Agenda 2063.
+      </p>
+    </div>
+
+    <div class="text-center mt-12">
+      <a id="contact" href="#contact" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out bounce-on-hover">Get in Touch</a>
+    </div>
+  </div>
+
+  <script>
+    const menuButton = document.querySelector('.mobile-menu-button');
+    const menu = document.querySelector('.mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+

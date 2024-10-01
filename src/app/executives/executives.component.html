@@ -1,13 +1,136 @@
-<!-- src/app/components/owe2-green-economy/owe2-green-economy.component.html -->
-<h2>Welcome To Owe2EnergyGreenEnvironment Executives </h2>
-<div class="executives-container">
-    <div class="executive-card" *ngFor="let executive of executives">
-      <img [src]="executive.profilePicture" alt="{{ executive.name }}" class="executive-photo" />
-      <h2>{{ executive.name }}</h2>
-      <h3>{{ executive.title }}</h3>
-      <p><strong>Email:</strong> <a href="mailto:{{ executive.email }}">{{ executive.email }}</a></p>
-      <p><strong>Phone:</strong> {{ executive.phone }}</p>
-      <p>{{ executive.bio }}</p>
+
+
+  <!-- Navbar Start -->
+  <nav class="bg-green-700 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-white font-bold text-xl">Owe2 Green Economy</div>
+
+      <div class="hidden md:flex space-x-6">
+        <a routerLink="/home"
+        class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+        <i class="fas fa-home"></i> Home
+      </a>
+      <a routerLink="/services"
+      class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+      <i class="fas fa-tools"></i> Services </a>
+        <a routerLink="/contact"
+        class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+        <i class="fas fa-envelope"></i> Contact
+      </a>
+      <a routerLink="/gallery"
+      class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+      <i class="fas fa-images"></i>Gallery</a>
+
+      <a routerLink="/executives"
+      class="hover:underline text-white font-semibold transition duration-300 ease-in-out transform hover:scale-110">
+      <i class="fas fa-user-tie"></i> Executives
+    </a>
+
+      </div>
+ <!-- Mobile Menu Button -->
+ <div class="md:hidden flex items-center">
+  <button (click)="toggleMenu()" class="mobile-menu-button text-white focus:outline-none">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+</div>
+    </div>
+ <!-- Mobile Menu -->
+  <!-- Mobile Menu -->
+  <div [ngClass]="{'hidden': !isMenuOpen}" class="mobile-menu md:hidden mt-4">
+    <ul class="flex flex-col space-y-2">
+      <li>
+        <a routerLink="/home" class="block text-white hover:text-gray-200 p-2">
+          <i class="fas fa-home"></i> Home
+        </a>
+      </li>
+      <li>
+        <a routerLink="/services" class="block text-white hover:text-gray-200 p-2">
+          <i class="fas fa-tools"></i> Services
+        </a>
+      </li>
+      <li>
+        <a routerLink="/about" class="block text-white hover:text-gray-200 p-2">
+          <i class="fas fa-info-circle"></i> About Us
+        </a>
+      </li>
+      <li>
+        <a routerLink="/gallery" class="block text-white hover:text-gray-200 p-2">
+          <i class="fas fa-images"></i> Gallery
+        </a>
+      </li>
+      <li>
+        <a routerLink="/executives" class="block text-white hover:text-gray-200 p-2">
+          <i class="fas fa-user-tie"></i> Executives
+        </a>
+      </li>
+      <li>
+        <a routerLink="/contact" class="block text-white hover:text-gray-200 p-2">
+          <i class="fas fa-envelope"></i> Contact
+        </a>
+      </li>
+    </ul>
+  </div>
+  </nav>
+  <!-- Navbar End -->
+
+<!-- Executives Section -->
+<div class="container mx-auto p-6 mt-16" id="executives"> <!-- Added mt-16 to push the content down -->
+  <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-10 text-green-700 animate__animated animate__fadeInDown">
+    Meet Our Executives
+  </h1>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div *ngFor="let executive of executives" class="max-w-sm rounded-lg overflow-hidden shadow-lg transform hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out animate__animated animate__fadeInUp">
+      <img class="w-full h-64 object-cover" [src]="executive.profilePicture" alt="{{ executive.name }}">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2 text-gray-800">{{ executive.name }}</div>
+        <p class="text-gray-700 font-medium text-lg">{{ executive.title }}</p>
+        <p class="text-gray-600 text-sm mt-2">{{ executive.bio }}</p>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <p class="text-gray-800 font-semibold">Contact Info</p>
+        <p class="text-gray-600"><strong>Email:</strong> <a href="mailto:{{ executive.email }}" class="text-blue-500 hover:text-blue-700 transition duration-300">{{ executive.email }}</a></p>
+        <p class="text-gray-600"><strong>Phone:</strong> <a href="tel:{{ executive.phone }}" class="text-blue-500 hover:text-blue-700 transition duration-300">{{ executive.phone }}</a></p>
+      </div>
     </div>
   </div>
-  
+</div>
+
+<!-- Non-Executives & Members Section -->
+<div class="container mx-auto p-6 mt-16" id="non-executives"> <!-- Added mt-16 to push the content down -->
+  <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-10 text-green-700 animate__animated animate__fadeInDown">
+    Meet Our Non-Executives & Members
+  </h1>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div *ngFor="let member of nonExecutives" class="max-w-sm rounded-lg overflow-hidden shadow-lg transform hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out animate__animated animate__fadeInUp">
+      <img class="w-full h-64 object-cover" [src]="member.profilePicture" alt="{{ member.name }}">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2 text-gray-800">{{ member.name }}</div>
+        <p class="text-gray-700 text-lg">{{ member.title }}</p>
+        <p class="text-gray-600 text-sm mt-2">{{ member.bio }}</p>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <p class="text-gray-800 font-semibold">Contact Info</p>
+        <p class="text-gray-600"><strong>Email:</strong> <a href="mailto:{{ member.email }}" class="text-blue-500 hover:text-blue-700 transition duration-300">{{ member.email }}</a></p>
+        <p class="text-gray-600"><strong>Phone:</strong> <a href="tel:{{ member.phone }}" class="text-blue-500 hover:text-blue-700 transition duration-300">{{ member.phone }}</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- External CSS and JS for Animations -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<script>
+  const menuButton = document.querySelector('.mobile-menu-button');
+  const menu = document.querySelector('.mobile-menu');
+
+  menuButton.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>

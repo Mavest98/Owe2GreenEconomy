@@ -1,0 +1,45 @@
+.background-image {
+  background: linear-gradient(135deg, rgba(34, 193, 195, 0.7) 0%, rgba(253, 187, 45, 0.7) 100%);
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.service-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service-item:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.text-muted {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mobile-menu {
+  background-color: #2d6a4f;
+  padding: 10px;
+}
+
+/* Navbar Logo */
+
+
+/* Hover effect for links */
+a:hover {
+  text-decoration: underline;
+  color: #ebf8f8;
+}
+
+/* Smoother transitions */
+.transition-all {
+  transition: all 0.3s ease-in-out;
+}

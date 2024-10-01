@@ -1,44 +1,53 @@
 /* src/app/components/owe2-green-economy/owe2-green-economy.component.css */
-h2{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: large;
 
+h2 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
 }
 
 .executives-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .executive-card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 20px;
-    max-width: 300px;
-    text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .executive-photo {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-bottom: 15px;
-  }
-  
-  h2 {
-    margin: 10px 0;
-  }
-  
-  h3 {
-    margin: 5px 0;
-    color: #666;
-  }
-  
-  p {
-    margin: 5px 0;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.executive-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.executive-photo {
+  border-radius: 70%;
+  width: 150px; /* Adjust the size as needed */
+  height: 150px; /* Ensure width and height are equal for a perfect circle */
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #2e7d4f; /* Optional: Add a border for better contrast */
+}
+
+h2 {
+  margin: 10px 0;
+}
+
+h3 {
+  margin: 5px 0;
+  color: #666;
+}
+
+p {
+  margin: 5px 0;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  background-color: #2e7d4f;
+}
